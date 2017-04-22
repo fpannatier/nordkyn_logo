@@ -94,16 +94,12 @@ var c6 = {
   y: 171.132
 };
 
-//Eckpunkte
-var e1x = [a1.x, a1.x, a1.x, c1.x];
-var e1y = [a1.y, a1.y, a1.y, c1.y];
-var e2x = [b2.x, a2.x, a2.x, c2.x];
-var e2y = [b2.y, a2.y, a2.y, c2.y];
-var e3x = [c3.x, c3.x, a3.x, a3.x];
-var e3y = [c3.y, c3.y, a3.y, a3.y];
-var e4x = [c4.x, c4.x, a4.x, a4.x];
-var e4y = [c4.y, c4.y, a4.y, a4.y];
-var e5x = [c5.x, c5.x, c5.x, c5.x];
-var e5y = [c5.y, c5.y, c5.y, c5.y];
-var e6x = [b6.x, c6.x, c6.x, c6.x];
-var e6y = [b6.y, c6.y, c6.y, c6.y];
+var triangles = [
+    [a1,a2,abc0],
+    [a2,a3,abc0],
+    [a3,a4,abc0],
+    [a4,a5,abc0],
+    [a5,a6,abc0],
+    [a6,a1,abc0]
+  ];
+  
