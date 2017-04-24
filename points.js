@@ -1,3 +1,4 @@
+var d=0;
 //Eckpunkte Sechseck ABC
 var abc0 = {
   x: 200,
@@ -102,10 +103,10 @@ var e5 = [b5,c5,c5,c5,c5,b5,a5,b5,c5];
 var e6 = [b6,b6,c6,c6,c6,c6,c6,b6,a6];
 
 var triangles = [
-    [e1,e2,abc0],
-    [e2,e3,abc0],
-    [e3,e4,abc0],
-    [e4,e5,abc0],
-    [e5,e6,abc0],
-    [e6,e1,abc0]
+    [e1[d],e2[d],abc0],
+    [e2[d],e3[d],abc0],
+    [e3[d],e4[d],abc0],
+    [e4[d],e5[d],abc0],
+    [e5[d],e6[d],abc0],
+    [e6[d],e1[d],abc0]
   ];

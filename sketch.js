@@ -1,6 +1,7 @@
 var weather;
 var farbton = 171;
 
+
 function setup() {
   createCanvas(400, 400);
   loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Oslo&APPID=001b0f58045147663b1ea518d34d88b4&units=metric', gotData);
@@ -22,9 +23,9 @@ function draw() {
   }
   //farbton = map(mouseX, 0, width, 0, 360);
 
-  //die farben müsste man eigentlich auch irgendwo in einem array definieren. 
-  //stell dir vor du hättest 10000 dreiecke mit 10000 verschiedenen farben. 
-  //jede farbe einzeln zu definieren wäre dann nicht mehr praktikabel. 
+  //die farben müsste man eigentlich auch irgendwo in einem array definieren.
+  //stell dir vor du hättest 10000 dreiecke mit 10000 verschiedenen farben.
+  //jede farbe einzeln zu definieren wäre dann nicht mehr praktikabel.
   t1 = color(farbton, 10, 78, 1);
   t2 = color(farbton, 60, 78, 1);
   t3 = color(farbton, 61, 40, 1);
@@ -32,7 +33,7 @@ function draw() {
   t5 = color(farbton, 35, 78, 1);
   t6 = color(137, 3, 87, 1);
 
-  //ein array aus den erstellten farben. damit man unten im for loop auf die einzelnen farben zugreifen kann. 
+  //ein array aus den erstellten farben. damit man unten im for loop auf die einzelnen farben zugreifen kann.
   var colors = [t1, t2, t3, t4, t5, t6];
 
   background(farbton, 10, 100, 1);
@@ -45,7 +46,7 @@ function draw() {
     fill(c);
     beginShape();
     //jedes dreieck in triangles ist wiederum ein array mit drei einträgen (ein eintrag pro punkt)
-    //auch hier könnte man einen for loop machen. 
+    //auch hier könnte man einen for loop machen.
       vertex(t[0].x, t[0].y);
       vertex(t[1].x, t[1].y);
       vertex(t[2].x, t[2].y);
