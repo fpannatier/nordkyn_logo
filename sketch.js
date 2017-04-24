@@ -18,7 +18,7 @@ function gotData(data) {
 function draw() {
 
   if (weather) {
-    farbton = weather.main.temp;
+    farbton = map(weather.main.temp,-20,30,0,360);
     //speed = weather.wind.speed;
     //deg = weather.wind.deg;
     console.log(weather.main.temp);
