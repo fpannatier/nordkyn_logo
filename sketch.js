@@ -19,8 +19,32 @@ function draw() {
 
   if (weather) {
     farbton = weather.main.temp;
+    //speed = weather.wind.speed;
+    //deg = weather.wind.deg;
     console.log(weather.main.temp);
   }
+//bedingung für die windgeschwindigkeit
+  /*if (speed < 3) {
+    d = 0;
+  }*/
+
+//bedingung für windrichtung
+  /*if (deg < 67.5 && deg > 22.5) {
+  d = 2;
+} else if (deg < 112.5 && deg > 67.5) {
+  d = 3;
+} else if (deg < 157.5 && deg > 112.5) {
+  d = 4;
+} else if (deg < 202.5 && deg > 157.5) {
+  d = 5;
+}else if (deg < 247.5 && deg > 202.5) {
+  d = 6;
+} else if (deg < 292.5 && deg > 247.5) {
+  d = 7;
+} else if (deg < 337.5 && deg > 292.5) {
+  d = 8;
+}*/
+
   //farbton = map(mouseX, 0, width, 0, 360);
 
   //die farben müsste man eigentlich auch irgendwo in einem array definieren.
