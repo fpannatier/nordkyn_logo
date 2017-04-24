@@ -29,7 +29,7 @@ function draw() {
   }*/
 
 //bedingung für windrichtung
-  if (deg > 337.5 && deg < 360 || deg > 0 && deg < 22.5) {
+  /*if (deg > 337.5 && deg < 360 || deg > 0 && deg < 22.5) {
     deg = 1;
 } else if (deg > 22.5 && deg < 67.5) {
   d = 2;
@@ -45,7 +45,7 @@ function draw() {
   d = 7;
 } else if (deg > 292.5 && deg < 337.5) {
   d = 8;
-}
+}*/
 
   //farbton = map(mouseX, 0, width, 0, 360);
 
