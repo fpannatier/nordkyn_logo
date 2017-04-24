@@ -94,12 +94,18 @@ var c6 = {
   y: 171.132
 };
 
+var e1 = [a1,a1,b1,c1,c1,c1,b1,a1,b1];
+var e2 = [b2,a2,b2,c2,c2,c2,c2,c2,b2];
+var e3 = [c3,c3,b3,a3,b3,c3,c3,c3,b3];
+var e4 = [c4,c4,b4,a4,a4,a4,b4,c4,b4];
+var e5 = [c5,c5,c5,c5,b5,a5,b5,c5,b5];
+var e6 = [b6,c6,c6,c6,c6,c6,b6,a6,b6];
+
 var triangles = [
-    [a1,a2,abc0],
-    [a2,a3,abc0],
-    [a3,a4,abc0],
-    [a4,a5,abc0],
-    [a5,a6,abc0],
-    [a6,a1,abc0]
+    [e1,e2,abc0],
+    [e2,e3,abc0],
+    [e3,e4,abc0],
+    [e4,e5,abc0],
+    [e5,e6,abc0],
+    [e6,e1,abc0]
   ];
-  
