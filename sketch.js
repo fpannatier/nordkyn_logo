@@ -25,10 +25,10 @@ function draw() {
     deg = weather.wind.deg;
     console.log(weather.main.temp,speed,deg);
   }
-  
+
   //bedingung für die windgeschwindigkeit
   //bedingung für windrichtung
-  if(speed<3){
+  if(speed<1.5){
     d = 0;
   }
   else if (deg > 337.5 && deg < 360 || deg > 0 && deg < 22.5) {
