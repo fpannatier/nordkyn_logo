@@ -1,6 +1,6 @@
 var weather;
 var farbton = 171;
-
+var d=0;
 
 function setup() {
   createCanvas(400, 400);
@@ -18,17 +18,17 @@ function gotData(data) {
 function draw() {
 
   if (weather) {
-    farbton = map(weather.main.temp,-20,30,0,360);
+    farbton = map(weather.main.temp, -20, 30, 0, 360);
     //speed = weather.wind.speed;
     //deg = weather.wind.deg;
     console.log(weather.main.temp);
   }
-//bedingung für die windgeschwindigkeit
+  //bedingung für die windgeschwindigkeit
   /*if (speed < 3) {
     d = 0;
   }*/
 
-//bedingung für windrichtung
+  //bedingung für windrichtung
   /*if (deg > 337.5 && deg < 360 || deg > 0 && deg < 22.5) {
     deg = 1;
 } else if (deg > 22.5 && deg < 67.5) {
@@ -65,6 +65,18 @@ function draw() {
   background(farbton, 10, 100, 1);
   noStroke();
 
+
+  var triangles = [
+    [e1[d], e2[d], abc0],
+    [e2[d], e3[d], abc0],
+    [e3[d], e4[d], abc0],
+    [e4[d], e5[d], abc0],
+    [e5[d], e6[d], abc0],
+    [e6[d], e1[d], abc0]
+  ];
+
+
+
   //mit einer for schlaufe über as in points.js definierte triangles array loopen.
   for (var i = 0; i < triangles.length; i++) {
     var t = triangles[i];
@@ -73,9 +85,9 @@ function draw() {
     beginShape();
     //jedes dreieck in triangles ist wiederum ein array mit drei einträgen (ein eintrag pro punkt)
     //auch hier könnte man einen for loop machen.
-      vertex(t[0].x, t[0].y);
-      vertex(t[1].x, t[1].y);
-      vertex(t[2].x, t[2].y);
+    vertex(t[0].x, t[0].y);
+    vertex(t[1].x, t[1].y);
+    vertex(t[2].x, t[2].y);
     endShape();
   }
 
