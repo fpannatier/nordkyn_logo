@@ -1,6 +1,8 @@
 var weather;
 var farbton = 171;
-var d=0;
+var d = 0;
+var deg = 0;
+var speed = 0;
 
 function setup() {
   createCanvas(400, 400);
@@ -19,33 +21,33 @@ function draw() {
 
   if (weather) {
     farbton = map(weather.main.temp, -20, 30, 0, 360);
-    //speed = weather.wind.speed;
-    //deg = weather.wind.deg;
-    console.log(weather.main.temp);
+    speed = weather.wind.speed;
+    deg = weather.wind.deg;
+    console.log(weather.main.temp,speed,deg);
   }
+  
   //bedingung für die windgeschwindigkeit
-  /*if (speed < 3) {
-    d = 0;
-  }*/
-
   //bedingung für windrichtung
-  /*if (deg > 337.5 && deg < 360 || deg > 0 && deg < 22.5) {
-    deg = 1;
-} else if (deg > 22.5 && deg < 67.5) {
-  d = 2;
-} else if (deg > 67.5 && deg < 112.5) {
-  d = 3;
-} else if (deg > 112.5 && deg < 157.5) {
-  d = 4;
-} else if (deg > 157.5 && deg < 202.5) {
-  d = 5;
-}else if (deg > 202.5 && deg < 247.5) {
-  d = 6;
-} else if (deg > 247.5 && deg < 292.5) {
-  d = 7;
-} else if (deg > 292.5 && deg < 337.5) {
-  d = 8;
-}*/
+  if(speed<3){
+    d = 0;
+  }
+  else if (deg > 337.5 && deg < 360 || deg > 0 && deg < 22.5) {
+    d = 1;
+  } else if (deg > 22.5 && deg < 67.5) {
+    d = 2;
+  } else if (deg > 67.5 && deg < 112.5) {
+    d = 3;
+  } else if (deg > 112.5 && deg < 157.5) {
+    d = 4;
+  } else if (deg > 157.5 && deg < 202.5) {
+    d = 5;
+  } else if (deg > 202.5 && deg < 247.5) {
+    d = 6;
+  } else if (deg > 247.5 && deg < 292.5) {
+    d = 7;
+  } else if (deg > 292.5 && deg < 337.5) {
+    d = 8;
+  }
 
   //farbton = map(mouseX, 0, width, 0, 360);
 
