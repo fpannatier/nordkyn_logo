@@ -94,3 +94,29 @@ function draw() {
   }
 
 }
+
+/*
+function keyTyped() {
+  if (key === '0') {
+    d = 0;
+  } else if (key === '1') {
+    d = 1;
+  } else if (key === '2') {
+    d = 2;
+  } else if (key === '3') {
+    d = 3;
+  } else if (key === '4') {
+    d = 4;
+  } else if (key === '5') {
+    d = 5;
+  } else if (key === '6') {
+    d = 6;
+  } else if (key === '7') {
+    d = 7;
+  } else if (key === '8') {
+    d = 8;
+  }
+  // uncomment to prevent any default behavior
+  return false;
+}
+*/
