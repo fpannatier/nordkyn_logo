@@ -27,10 +27,10 @@ function draw() {
   }
 
   //bedingung für die windgeschwindigkeit
-  //bedingung für windrichtung
   if(speed<1.5){
     d = 0;
   }
+  //bedingung für windrichtung
   else if (deg > 337.5 && deg < 360 || deg > 0 && deg < 22.5) {
     d = 1;
   } else if (deg > 22.5 && deg < 67.5) {
@@ -95,6 +95,7 @@ function draw() {
 
 }
 
+//keyTyped events zur präsentation
 /*
 function keyTyped() {
   if (key === '0') {
