@@ -1,3 +1,4 @@
+
 //Eckpunkte Sechseck ABC
 var abc0 = {
   x: 200,
@@ -94,16 +95,10 @@ var c6 = {
   y: 171.132
 };
 
-//Eckpunkte
-var e1x = [a1.x, a1.x, a1.x, c1.x];
-var e1y = [a1.y, a1.y, a1.y, c1.y];
-var e2x = [b2.x, a2.x, a2.x, c2.x];
-var e2y = [b2.y, a2.y, a2.y, c2.y];
-var e3x = [c3.x, c3.x, a3.x, a3.x];
-var e3y = [c3.y, c3.y, a3.y, a3.y];
-var e4x = [c4.x, c4.x, a4.x, a4.x];
-var e4y = [c4.y, c4.y, a4.y, a4.y];
-var e5x = [c5.x, c5.x, c5.x, c5.x];
-var e5y = [c5.y, c5.y, c5.y, c5.y];
-var e6x = [b6.x, c6.x, c6.x, c6.x];
-var e6y = [b6.y, c6.y, c6.y, c6.y];
+var e1 = [b1,a1,a1,b1,c1,c1,c1,b1,a1];
+var e2 = [b2,b2,a2,b2,c2,c2,c2,c2,c2];
+var e3 = [b3,c3,c3,b3,a3,b3,c3,c3,c3];
+var e4 = [b4,c4,c4,b4,a4,a4,a4,b4,c4];
+var e5 = [b5,c5,c5,c5,c5,b5,a5,b5,c5];
+var e6 = [b6,b6,c6,c6,c6,c6,c6,b6,a6];
+

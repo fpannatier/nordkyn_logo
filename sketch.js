@@ -1,32 +1,59 @@
 var weather;
+var farbton = 171;
+var d = 0;
+var deg = 0;
+var speed = 0;
 
 function setup() {
   createCanvas(400, 400);
   loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Oslo&APPID=001b0f58045147663b1ea518d34d88b4&units=metric', gotData);
 
-  var farbton = 171;
-
   colorMode(HSB);
-  t1 = color(farbton, 10, 78, 1);
-  t2 = color(farbton, 60, 78, 1);
-  t3 = color(farbton, 61, 40, 1);
-  t4 = color(farbton, 50, 55, 1);
-  t5 = color(farbton, 35, 78, 1);
-  t6 = color(137, 3, 87, 1);
 
 }
 
 function gotData(data) {
-  weather=data;
+  weather = data;
 
 }
 
 function draw() {
 
-  //farbton = map(mouseX, 0, width, 0, 360);
-  if(weather) {
-    var farbton = weather.main.temp;
+  if (weather) {
+    farbton = map(weather.main.temp, -20, 30, 0, 360);
+    speed = weather.wind.speed;
+    deg = weather.wind.deg;
+    console.log(weather.main.temp,speed,deg);
   }
+
+  //bedingung für die windgeschwindigkeit
+  if(speed<1.5){
+    d = 0;
+  }
+  //bedingung für windrichtung
+  else if (deg > 337.5 && deg < 360 || deg > 0 && deg < 22.5) {
+    d = 1;
+  } else if (deg > 22.5 && deg < 67.5) {
+    d = 2;
+  } else if (deg > 67.5 && deg < 112.5) {
+    d = 3;
+  } else if (deg > 112.5 && deg < 157.5) {
+    d = 4;
+  } else if (deg > 157.5 && deg < 202.5) {
+    d = 5;
+  } else if (deg > 202.5 && deg < 247.5) {
+    d = 6;
+  } else if (deg > 247.5 && deg < 292.5) {
+    d = 7;
+  } else if (deg > 292.5 && deg < 337.5) {
+    d = 8;
+  }
+
+  //farbton = map(mouseX, 0, width, 0, 360);
+
+  //die farben müsste man eigentlich auch irgendwo in einem array definieren.
+  //stell dir vor du hättest 10000 dreiecke mit 10000 verschiedenen farben.
+  //jede farbe einzeln zu definieren wäre dann nicht mehr praktikabel.
   t1 = color(farbton, 10, 78, 1);
   t2 = color(farbton, 60, 78, 1);
   t3 = color(farbton, 61, 40, 1);
@@ -34,30 +61,63 @@ function draw() {
   t5 = color(farbton, 35, 78, 1);
   t6 = color(137, 3, 87, 1);
 
-  background(farbton,10,100,1);
+  //ein array aus den erstellten farben. damit man unten im for loop auf die einzelnen farben zugreifen kann.
+  var colors = [t1, t2, t3, t4, t5, t6];
+
+  background(farbton, 10, 100, 1);
   noStroke();
 
-  //T1
-  fill(t1);
-  triangle(a1.x, a1.y, a2.x, a2.y, abc0.x, abc0.y);
 
-  //T2
-  fill(t2);
-  triangle(a2.x, a2.y, a3.x, a3.y, abc0.x, abc0.y);
+  var triangles = [
+    [e1[d], e2[d], abc0],
+    [e2[d], e3[d], abc0],
+    [e3[d], e4[d], abc0],
+    [e4[d], e5[d], abc0],
+    [e5[d], e6[d], abc0],
+    [e6[d], e1[d], abc0]
+  ];
 
-  //T3
-  fill(t3);
-  triangle(a3.x, a3.y, a4.x, a4.y, abc0.x, abc0.y);
 
-  //T4
-  fill(t4);
-  triangle(a4.x, a4.y, a5.x, a5.y, abc0.x, abc0.y);
 
-  //T5
-  fill(t5);
-  triangle(a5.x, a5.y, a6.x, a6.y, abc0.x, abc0.y);
+  //mit einer for schlaufe über as in points.js definierte triangles array loopen.
+  for (var i = 0; i < triangles.length; i++) {
+    var t = triangles[i];
+    var c = colors[i];
+    fill(c);
+    beginShape();
+    //jedes dreieck in triangles ist wiederum ein array mit drei einträgen (ein eintrag pro punkt)
+    //auch hier könnte man einen for loop machen.
+    vertex(t[0].x, t[0].y);
+    vertex(t[1].x, t[1].y);
+    vertex(t[2].x, t[2].y);
+    endShape();
+  }
 
-  //T6
-  fill(t6);
-  triangle(a6.x, a6.y, a1.x, a1.y, abc0.x, abc0.y);
 }
+
+//keyTyped events zur präsentation
+/*
+function keyTyped() {
+  if (key === '0') {
+    d = 0;
+  } else if (key === '1') {
+    d = 1;
+  } else if (key === '2') {
+    d = 2;
+  } else if (key === '3') {
+    d = 3;
+  } else if (key === '4') {
+    d = 4;
+  } else if (key === '5') {
+    d = 5;
+  } else if (key === '6') {
+    d = 6;
+  } else if (key === '7') {
+    d = 7;
+  } else if (key === '8') {
+    d = 8;
+  }
+  // uncomment to prevent any default behavior
+  return false;
+}
+*/
