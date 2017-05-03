@@ -1,20 +1,34 @@
 var weather;
+var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
+var city = 'Oslo';
+var apiKey = '&APPID=001b0f58045147663b1ea518d34d88b4';
+var units = '&units=metric';
 var farbton = 171;
 var d = 0;
 var deg = 0;
 var speed = 0;
 
+var input;
+
 function setup() {
   createCanvas(400, 400);
-  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Oslo&APPID=001b0f58045147663b1ea518d34d88b4&units=metric', gotData);
+
+  var button = select('#submit');
+  button.mousePressed(weatherAsk);
+
+  input = select('#city');
 
   colorMode(HSB);
 
 }
 
+function weatherAsk() {
+  var url = api + input.value() + apiKey + units;
+  loadJSON(url, gotData);
+}
+
 function gotData(data) {
   weather = data;
-
 }
 
 function draw() {
