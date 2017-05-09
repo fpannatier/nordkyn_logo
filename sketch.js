@@ -66,8 +66,6 @@ function draw() {
   //farbton = map(mouseX, 0, width, 0, 360);
 
   //die farben müsste man eigentlich auch irgendwo in einem array definieren.
-  //stell dir vor du hättest 10000 dreiecke mit 10000 verschiedenen farben.
-  //jede farbe einzeln zu definieren wäre dann nicht mehr praktikabel.
   t1 = color(farbton, 10, 78, 1);
   t2 = color(farbton, 60, 78, 1);
   t3 = color(farbton, 61, 40, 1);
