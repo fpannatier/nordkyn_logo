@@ -9,12 +9,18 @@ var deg = 0;
 var speed = 0;
 
 var input;
+var stadt;
+var submit;
 
 function setup() {
   createCanvas(400, 400);
-
+  createP('Stadt eingeben:').position(10,410);
+  stadt = createInput('Oslo');
+  stadt.position(115,424);
+  submit = createButton("OK");
+  submit.position(250,424);
   var button = select('#submit');
-  button.mousePressed(weatherAsk);
+  submit.mousePressed(weatherAsk);
 
   input = select('#city');
 
@@ -23,7 +29,7 @@ function setup() {
 }
 
 function weatherAsk() {
-  var url = api + input.value() + apiKey + units;
+  var url = api + stadt.value() + apiKey + units;
   loadJSON(url, gotData);
 }
 
